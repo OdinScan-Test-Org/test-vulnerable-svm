@@ -15,6 +15,6 @@ jobs:
       - uses: actions/checkout@v4
       - uses: odin-scan/odin-scan-action@v1
         with:
-          findings-visibility: counts
+          findings-visibility: private 
           api-key: '${{ secrets.ODIN_SCAN_API_KEY }}'
 
