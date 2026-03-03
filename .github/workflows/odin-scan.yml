@@ -1,8 +1,9 @@
 name: Odin Scan Security Analysis
 on:
   pull_request:
-    branches: [main, master]
-
+    branches:
+      - main
+      - master
 jobs:
   security-scan:
     runs-on: ubuntu-latest
@@ -14,5 +15,6 @@ jobs:
       - uses: actions/checkout@v4
       - uses: odin-scan/odin-scan-action@v1
         with:
-          api-key: ${{ secrets.ODIN_SCAN_API_KEY }}
+          findings-visibility: counts
+          api-key: '${{ secrets.ODIN_SCAN_API_KEY }}'
 
